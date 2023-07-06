@@ -1,0 +1,12 @@
+---
+name: "Create-Ticket"
+pack: ticket
+runner_type: "python-script"
+description: "Create a ticket incident in  ServiceNow Table"
+enabled: true
+entry_point: "Create-Ticket.py"
+parameters:
+  payload:
+    type: object
+    description: "Ticket to be created in ServiceNow"
+    required: true
