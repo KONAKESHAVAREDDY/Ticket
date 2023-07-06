@@ -1,0 +1,33 @@
+version: 1.0
+
+description: A workflow to copy swapi people from a mongo database and to snow.
+
+tasks:
+  create:
+    action: ticket.Create-Ticket
+    input:
+      payload:
+        type: string
+        required: true
+    next:
+      - when: <% succeeded() %>
+        publish:
+          - sys_id: <% result().result %>
+        do: read
+
+  read:
+    action: ticket.Read-Ticket sys_id=<% ctx().sys_id %>
+    next:
+      - when: <% succeeded() %>
+        do: update
+
+  update:
+    action: ticket.Update-Ticket sys_id=<% ctx().sys_id %>
+    next:
+      - when: <% succeeded() %>
+        publish:
+          - sys_id: <% result().result %>
+        do: delete
+
+  delete:
+    action: ticket.Delete-Ticket sys_id=<% ctx().sys_id %>
