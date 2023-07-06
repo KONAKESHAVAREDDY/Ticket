@@ -1,0 +1,12 @@
+---
+name: "Read-Ticket"
+pack: ticket
+runner_type: "python-script"
+description: "Read ticket in  ServiceNow Table"
+enabled: true
+entry_point: "Read-Ticket.py"
+parameters:
+  sys_id:
+    type: string
+    description: "Ticket to be read in ServiceNow"
+    required: true
