@@ -1,0 +1,11 @@
+---
+name: webhook
+enabled: true
+trigger:
+  type: core.st2.webhook
+  parameters:
+    url: webhook
+action:
+  ref: ticket.CRUD-Ticket
+  parameters:
+    payload : "{{trigger.body.payload}}"
