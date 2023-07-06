@@ -1,0 +1,12 @@
+---
+name: "Delete-Ticket"
+pack: ticket
+runner_type: "python-script"
+description: "Delete a ticket incident in  ServiceNow"
+enabled: true
+entry_point: "Delete-Ticket.py"
+parameters:
+  sys_id:
+    type: string
+    description: "Ticket to be deleted in servicenow"
+    required: true
