@@ -1,0 +1,10 @@
+---
+name: CRUD-Ticket
+description: A workflow that creates reads updates deletes ticket on servicenow.
+runner_type: orquesta
+entry_point: workflows/CRUD-Ticket.yaml
+enabled: true
+parameters:
+  payload:
+   type: object
+   required: true
