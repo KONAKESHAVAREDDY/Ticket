@@ -1,0 +1,12 @@
+---
+ref: ticket
+name: ticket
+description: Ticket Integration Pack
+keywords:
+  - ticket
+  - incident management
+version: 1.0.0
+python_versions:
+  - "3"
+author: James cameron
+email: cameron@stackstorm.com
